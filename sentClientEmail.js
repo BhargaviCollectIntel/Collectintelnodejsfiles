@@ -72,6 +72,8 @@ app.post("/send-email", (req, res) => {
         const instagramUrl = "https://collectintel.in/emailtemplateicons/social.png";
         const linkedinUrl = "https://collectintel.in/emailtemplateicons/linkedin.png";
         const twitterUrl = "https://collectintel.in/emailtemplateicons/twitter.png";
+        const formattedEmailContent = email_content.replace(/\\r\\n|\\n|\\r/g, "<br>");
+
 
         if (!imageUrl.startsWith("http")) {
             console.error("Error: Invalid Image URL.");
@@ -85,13 +87,13 @@ app.post("/send-email", (req, res) => {
         <head>
         
         </head>
-        <body style="font-family: Arial, sans-serif; background-color:#f6f6f6; margin: 10px auto; padding: auto auto; width:60%;height:auto;">
+        <body style="font-family:sans-serif; background-color:#E1E1E1; margin: 10px auto; padding: auto auto; width:90%;height:auto;">
         <div class='main-heading' style="color:black;text-align: center; "><h1 style="margin-top:35px;padding-top:20px">Explore Your Dreams with Collectintel Associates LLP</h1></div>
         <div class='image' style="width: 80%; margin: auto; text-align: center;">
         <img src="${imageUrl}" width="350" alt="Email Image" style="border-radius:8px;"/>
         </div>
         <div  style="text-align:center;color:black"><h1>Dear,${client_name}  </h1></div>
-        <div  style="font-size: 18px;text-align:center;margin:5px 30px"><p>We are excited to introduce Collectintel Associates LLP, your trusted partner for the services mentioned below.</p></div>
+        <div  style="font-size: 15px;text-align:center;margin:5px 30px"><p>We are excited to introduce Collectintel Associates LLP, your trusted partner for the services mentioned below.</p></div>
        
        <div style="text-align: center; background-color: #4C6AE9; padding: 10px; display: flex; flex-direction: column; justify-content: center; color: white; border-radius: 10px; margin: 5px auto; width: 300px;">
     
@@ -156,11 +158,14 @@ app.post("/send-email", (req, res) => {
                     height: auto;
                     background-color:white
                 ">
-                    <p style="background-color:white;margin: 15px 40px;color:black;font-size:17px;font-weight:700;padding:5px">${email_content}</p>
+                    <p style="white-space: pre-wrap; background-color: white; margin: 15px 40px; color: black; font-size: 15px; font-weight: 500; padding: 5px;">
+    ${formattedEmailContent}
+</p>
+
                 </div>
 
         <h2 style="text-align:center;color:black">Why Choose Us?</h2>
-        <p style="font-size: 18px;text-align:center;margin:5px 40px;">We are dedicated to delivering exceptional service with transparency, integrity, and efficiency.  Our policies ensure secure transactions, data protection, and a seamless customer experience. </p>
+        <p style="font-size: 15px;text-align:center;margin:5px 40px;">We are dedicated to delivering exceptional service with transparency, integrity, and efficiency.  Our policies ensure secure transactions, data protection, and a seamless customer experience. </p>
         <div>
 
        
@@ -168,13 +173,13 @@ app.post("/send-email", (req, res) => {
              
 
         <div  style="text-align:center">
-            <h2 style="color:blue;text-align:center"> <a href="https://collectintel.in/contact-us" style="color:black;text-decoration: none;">Let's Connect </a></h2>
-            <p >info@collectintel.in | <a href="https://collectintel.in">88856 00476</a> | <a href="https://collectintel.in">Visit Website</a></p>
+            <h2 style="color:blue;text-align:center"> <a href="mailto:info@collectintel.in" style="color:black;text-decoration: none;">Let's Connect </a></h2>
+            <p >info@collectintel.in | <a href="tel:+917801005970">7801005970</a> | <a href="https://collectintel.in">Visit Website</a></p>
         </div>
         <div  style="text-align:center">
             <h2 style="color:black">Our Address</h3>
         </div>
-      <p style="font-size: 18px;text-align:center;margin:5px 40px;">Plot no. 40, Green Hills, Kaithalapur Flyover Rd, Bhagyanagar Colony, Madhapur, Hyderabad, Telangana 500072</p>
+      <p style="font-size: 15px;text-align:center;margin:5px 40px;">Plot no. 40, Green Hills, Kaithalapur Flyover Rd, Bhagyanagar Colony, Madhapur, Hyderabad, Telangana 500072</p>
 
         <div style="
     display: flex;
