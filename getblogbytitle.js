@@ -16,9 +16,9 @@ app.use(cors({
 
 // Database connection configuration
 const dbConfig = {
-  host: "selectcardcustomers.cbg8oyggkzt8.ap-south-1.rds.amazonaws.com",
-  user: "admin",
-  password: "Kalyan9751",
+  host: 'selectcardcustomers.cjmo02o4ck7j.ap-south-1.rds.amazonaws.com',
+  user: 'admin',
+  password: 'Collectintel123',
   database: "CollectIntel",
 };
 
